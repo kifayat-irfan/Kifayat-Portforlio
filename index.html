@@ -225,6 +225,10 @@
       .l-code:hover { background: var(--chip); }
       .l-code.disabled { opacity: 0.45; pointer-events: none; }
 
+      /* ---------- automation ---------- */
+      .proj figure.auto-media { aspect-ratio: 16/9; background: #000; }
+      .proj figure.auto-media video { width: 100%; height: 100%; object-fit: cover; display: block; }
+
       /* ---------- skills ---------- */
       .marquee { overflow: hidden; border-block: 1px solid var(--line); padding: 16px 0; margin-bottom: 40px;
         -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
@@ -322,6 +326,7 @@
         <div class="nav-links">
           <a href="#about">About</a>
           <a href="#projects">Projects</a>
+          <a href="#automation">Automation</a>
           <a href="#skills">Skills</a>
           <a href="#journey">Journey</a>
           <a href="#credentials">Credentials</a>
@@ -475,6 +480,37 @@
               <div class="stack"><span>Python</span><span>LLM Agents</span><span>RAG</span></div>
               <div class="proj-links">
                 <a class="l-code" href="https://github.com/kifayat-irfan/autonomous-research-platform" target="_blank" rel="noopener">Source Code ↗</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= AUTOMATION ================= -->
+    <section id="automation">
+      <div class="wrap">
+        <div class="sec-head rv">
+          <div class="kicker">Automation</div>
+          <h2>Workflows that run themselves</h2>
+          <p>Real n8n automations solving real problems — each one built and tested live, with the workflow itself to prove it.</p>
+        </div>
+        <div class="proj-grid">
+
+          <article class="proj rv">
+            <figure class="auto-media"><video controls preload="metadata" poster="assets/automation/n8n-workflow-01-thumbnail-landscape-1280x720.png"><source src="assets/automation/n8n-workflow-01-demo-video-v4.mp4" type="video/mp4" /></video></figure>
+            <div class="proj-body">
+              <span class="live-badge"><i></i> TESTED LIVE</span>
+              <h3>Lead Capture — Website Form to Telegram + Sheet</h3>
+              <p>A visitor fills in a website contact form — and the business finds out instantly. The workflow sends a Telegram alert the moment a lead arrives and saves the lead to a log automatically, so no lead is ever missed.</p>
+              <div class="metrics">
+                <span>Instant Telegram alert</span><span>Lead saved automatically</span><span>Form → Telegram → CSV</span>
+              </div>
+              <div class="stack"><span>n8n</span><span>Telegram</span><span>Form Trigger</span><span>CSV</span></div>
+              <div class="proj-links">
+                <a class="l-live" href="https://www.linkedin.com/feed/update/urn:li:activity:7529780792143699968/" target="_blank" rel="noopener">LinkedIn Post ↗</a>
+                <a class="l-code" href="assets/automation/n8n-workflow-01-lead-capture.json" target="_blank" rel="noopener">Workflow JSON</a>
               </div>
             </div>
           </article>
