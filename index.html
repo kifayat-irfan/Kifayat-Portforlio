@@ -305,6 +305,50 @@
       .contact-card small { display: block; color: var(--hero-soft); font-size: 0.76rem; font-family: "IBM Plex Mono", monospace; letter-spacing: 0.05em; text-transform: uppercase; }
       .contact-card b { font-size: 1rem; word-break: break-all; }
 
+/* ---------- refinement polish ---------- */
+      ::selection { background: var(--amber); color: #1c1503; }
+      a:focus-visible, .btn:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; border-radius: 6px; }
+      section { padding: 84px 0; }
+      .proj:hover { box-shadow: 0 26px 50px rgba(23, 32, 29, 0.2); }
+      .proj figure { position: relative; }
+
+      /* ---------- featured project ---------- */
+      .proj.featured {
+        grid-column: 1 / -1; flex-direction: row; border: 2px solid var(--amber);
+        box-shadow: 0 22px 48px rgba(23, 32, 29, 0.16), 0 0 0 6px color-mix(in srgb, var(--amber) 14%, transparent);
+      }
+      .proj.featured:hover { border-color: var(--amber); box-shadow: 0 28px 56px rgba(23, 32, 29, 0.22), 0 0 0 6px color-mix(in srgb, var(--amber) 18%, transparent); }
+      .proj.featured figure { flex: 0 0 46%; aspect-ratio: auto; }
+      .proj.featured figure img { height: 100%; }
+      .proj.featured .proj-body { padding: 30px; justify-content: center; gap: 12px; }
+      .proj.featured .proj-body h3 { font-size: 1.65rem; }
+      .proj.featured .proj-body p { font-size: 1rem; flex: none; }
+      .new-tag {
+        position: absolute; top: 14px; left: 14px; z-index: 2;
+        font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
+        background: var(--amber); color: #1c1503; padding: 5px 12px; border-radius: 999px;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+      }
+      .badge-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+      .badge-row .live-badge { align-self: auto; }
+      .demo-badge {
+        font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; font-weight: 600;
+        color: var(--ink-soft); border: 1px solid var(--line); padding: 4px 10px; border-radius: 999px;
+      }
+      @media (max-width: 640px) {
+        .proj.featured { flex-direction: column; }
+        .proj.featured figure { flex: none; aspect-ratio: 16/10; }
+        .proj.featured .proj-body { padding: 22px; }
+        .proj.featured .proj-body h3 { font-size: 1.4rem; }
+      }
+
+      /* ---------- cta actions ---------- */
+      .cta-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 30px; }
+      .btn-wa { background: #22a35a; color: #fff; font-size: 1rem; padding: 15px 26px; box-shadow: 0 12px 28px rgba(34, 163, 90, 0.35); }
+      .btn-wa:hover { background: #2cb866; }
+      .btn-outline-light { border: 1px solid rgba(242, 238, 226, 0.35); color: var(--hero-ink); padding: 15px 24px; }
+      .btn-outline-light:hover { border-color: #f0b64a; }
+
       footer { padding: 30px 0 40px; }
       .foot-in { display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; border-top: 1px solid var(--line); padding-top: 22px; color: var(--ink-faint); font-size: 0.86rem; }
       .foot-in a { color: var(--teal); font-weight: 600; text-decoration: none; }
@@ -344,7 +388,7 @@
             <div class="hero-tag"><span class="dot"></span> Available for AI Engineer roles — anywhere in Pakistan</div>
             <h1>Kifayat Irfan<br />builds AI that<br /><span class="accent">actually ships.</span></h1>
             <div class="role-line">&gt; <span class="typed" id="typed"></span><span class="caret"></span></div>
-            <p class="lede">AI Engineer specialising in Agentic AI, Computer Vision, RAG and Chatbots. My flagship system, MedVision AI, is live right now — five imaging modalities, real Grad-CAM explanations, real measured accuracy.</p>
+            <p class="lede">AI Engineer building AI agents, computer vision and retrieval-augmented generation — with roughly three years of hands-on experience behind me. My newest build, a WhatsApp shop assistant that answers customers and takes orders, is live below — alongside MedVision AI, five imaging modalities with real Grad-CAM explanations and measured accuracy.</p>
             <div class="hero-ctas">
               <a class="btn btn-amber" href="#projects">View Live Projects ↓</a>
               <a class="btn btn-ghost" href="https://github.com/kifayat-irfan" target="_blank" rel="noopener">GitHub Profile ↗</a>
@@ -373,14 +417,15 @@
         </div>
         <div class="about-grid">
           <div class="rv">
-            <p>I'm <strong>Kifayat Irfan</strong>, an AI Engineer currently working at <strong>Zigron</strong>, where I build production AI systems. My work runs the full pipeline — data preparation, model training and evaluation, explainability, backend APIs, and deployed front-ends that real users can open today.</p>
-            <p><strong>GuardX</strong>, my final project for the Hirable AI Bootcamp — an autonomous AI security agent — taught me real-time computer vision under pressure. Since then I've gone deep on <strong>medical AI</strong> with MedVision AI — a clinical decision-support system designed as a "second pair of eyes" for radiologists — and on <strong>RAG systems</strong> that answer questions from private document collections without sending data to the cloud.</p>
+            <p>I'm <strong>Kifayat Irfan</strong>, an AI Engineer with roughly <strong>three years of hands-on experience</strong> — stated openly: <strong>14 months of it professional</strong>, in software houses. Eight months as an AI Engineer at <strong>Zigron</strong> (Mar – Oct 2026), building production AI systems across the full pipeline — data preparation, model training and evaluation, explainability, backend APIs, and deployed front-ends that real users can open today. Before that, six months as a Web Developer at <strong>Z&amp;M Consultancy</strong> (Sep 2025 – Feb 2026). The rest of the three years is project work: an eight-month university final-year project and the <strong>Hirable Applied AI Bootcamp</strong>, where I built GuardX, MedVision AI and VectorMind.</p>
+            <p>My current focus is <strong>AI agents</strong> — the newest is a WhatsApp shop assistant that answers customers, takes orders and confirms them before placing, live below as a working demo. <strong>GuardX</strong>, my final project for the Hirable AI Bootcamp — an autonomous AI security agent — taught me real-time computer vision under pressure. I've also gone deep on <strong>medical AI</strong> with MedVision AI — a clinical decision-support system designed as a "second pair of eyes" for radiologists — and on <strong>RAG systems</strong> that answer questions from private document collections without sending data to the cloud.</p>
             <p>I care about honest numbers: every accuracy figure on this page is a measured result from a real dataset, and every project below links to the live system or its source code so you can check for yourself.</p>
           </div>
           <aside class="fact-card rv rv-d1">
             <img class="about-avatar" src="assets/profile.webp" alt="Portrait of Kifayat Irfan" width="460" height="460" loading="lazy" />
             <h3>Quick facts</h3>
-            <div class="fact"><span>Role</span><b>AI Engineer — Zigron</b></div>
+            <div class="fact"><span>Role</span><b>AI Engineer</b></div>
+            <div class="fact"><span>Experience</span><b>~3 years hands-on · 14 months professional</b></div>
             <div class="fact"><span>Focus</span><b>Agentic AI · Computer Vision · RAG · Chatbots</b></div>
             <div class="fact"><span>Degree</span><b>BS Computer Science</b></div>
             <div class="fact"><span>Certification</span><b>NAVTTC — AI ML DL</b></div>
@@ -400,6 +445,29 @@
           <p>Every project here is deployed or open-source. Click through and try the real thing.</p>
         </div>
         <div class="proj-grid">
+
+          <article class="proj featured rv">
+            <figure>
+              <img src="assets/slicehouse.webp" alt="Illustration of the WhatsApp Shop Assistant: a phone showing a chat conversation, with a pizza, a confirmed-order checkmark, a shopping bag and a voice-message microphone" />
+              <span class="new-tag">NEW</span>
+            </figure>
+            <div class="proj-body">
+              <div class="badge-row">
+                <span class="live-badge"><i></i> LIVE DEMO</span>
+                <span class="demo-badge">DEMO — FICTIONAL SHOP</span>
+              </div>
+              <h3>WhatsApp Shop Assistant</h3>
+              <p>An AI agent that runs a shop's WhatsApp — built for SliceHouse Pizza, a fictional demo shop, so anyone can try the full flow end to end. It answers menu questions, takes orders by text or voice, confirms every order with the customer before placing it, and computes totals in code, never in the model's head — so prices are never invented. The live demo has already captured a real test order.</p>
+              <div class="metrics">
+                <span>Order #1024 captured · $23.98</span><span>27/27 app tests</span><span>22/22 smoke tests</span><span>Text + voice ordering</span>
+              </div>
+              <div class="stack"><span>Python</span><span>Streamlit</span><span>SenseNova LLM</span><span>Groq Whisper</span></div>
+              <div class="proj-links">
+                <a class="l-live" href="https://whatsapp-shop-assistant.streamlit.app/" target="_blank" rel="noopener">Live Demo ↗</a>
+                <a class="l-code" href="https://github.com/kifayat-irfan/whatsapp-shop-assistant" target="_blank" rel="noopener">Source Code</a>
+              </div>
+            </div>
+          </article>
 
           <article class="proj rv">
             <figure><img src="assets/img-1.webp" alt="Illustration of MedVision AI: chest X-ray and brain MRI scans analysed by a neural network" loading="lazy" /></figure>
@@ -600,13 +668,20 @@
         <div class="sec-head rv">
           <div class="kicker">Journey</div>
           <h2>Experience &amp; training</h2>
+          <p>About three years of hands-on experience in total — 14 months professional in software houses, an eight-month final-year project, and intensive bootcamp builds.</p>
         </div>
         <div class="timeline">
-          <div class="tl now rv">
-            <div class="when">MAR 2026 — PRESENT</div>
+          <div class="tl rv">
+            <div class="when">MAR — OCT 2026 · 8 MONTHS</div>
             <h3>AI Engineer</h3>
             <div class="where">Zigron</div>
-            <p>Building production AI systems — model development, backend integration and deployed AI products. In parallel, completing the Hirable AI bootcamp (15 May – Oct 2026) to sharpen applied AI engineering.</p>
+            <p>Built production AI systems — model development, backend integration and deployed AI products, end to end. In parallel, completed the Hirable Applied AI Bootcamp (15 May – Oct 2026).</p>
+          </div>
+          <div class="tl rv">
+            <div class="when">15 MAY — OCT 2026 · COMPLETED</div>
+            <h3>Applied AI Bootcamp</h3>
+            <div class="where">Hirable</div>
+            <p>Six-month applied AI programme covering Python, machine learning, deep learning, LLMs &amp; generative AI, agentic AI, FastAPI, Docker, AWS and n8n. Final project: GuardX, an autonomous AI security agent, where I led the AI and backend workstream — all phases completed, verified and deployed.</p>
           </div>
           <div class="tl rv">
             <div class="when">FEB — MAY 2026</div>
@@ -615,10 +690,10 @@
             <p>Completed the Machine Learning, Deep Learning and Artificial Intelligence programme under PMYSDP Batch III.</p>
           </div>
           <div class="tl rv">
-            <div class="when">HIRABLE AI BOOTCAMP — FINAL PROJECT</div>
-            <h3>Team Lead — AI &amp; Backend, GuardX</h3>
-            <div class="where">Hirable AI Bootcamp</div>
-            <p>Led the AI and backend workstream of GuardX, my Hirable AI Bootcamp final project — an autonomous security agent for real-time incident detection and response, working alongside teammates on computer vision and the frontend/automation layers. All phases completed, verified and deployed.</p>
+            <div class="when">SEP 2025 — FEB 2026 · 6 MONTHS</div>
+            <h3>Web Developer</h3>
+            <div class="where">Z&amp;M Consultancy</div>
+            <p>Developed responsive websites and web applications for business use; built front-end interfaces and back-end functionality across the full web stack.</p>
           </div>
           <div class="tl rv">
             <div class="when">2020 — 2024</div>
@@ -679,9 +754,13 @@
     <section id="contact" style="padding-top: 0;">
       <div class="wrap">
         <div class="cta-band rv">
-          <div class="kicker mono" style="color:#f0b64a; font-size:0.8rem; letter-spacing:0.08em;">OPEN SOURCE · LET'S TALK</div>
-          <h2>See the code. Then let's build something.</h2>
-          <p>All of my major projects are public on GitHub — training code, evaluation results and deployment configs included. If you're hiring an AI engineer or need an AI system built, reach me directly:</p>
+          <div class="kicker mono" style="color:#f0b64a; font-size:0.8rem; letter-spacing:0.08em;">LET'S TALK</div>
+          <h2>Your customers are messaging. Is anyone answering?</h2>
+          <p>Every WhatsApp message that sits unanswered is a customer who buys somewhere else. I build AI agents that reply instantly — answering questions, taking orders and confirming them before they're placed, like the SliceHouse demo above — and production AI systems end to end. Hiring an AI engineer, or need an agent of your own? WhatsApp is the fastest way to reach me:</p>
+          <div class="cta-actions">
+            <a class="btn btn-wa" href="https://wa.me/923055070364" target="_blank" rel="noopener">Message me on WhatsApp ↗</a>
+            <a class="btn btn-outline-light" href="mailto:kifayatirfan875@gmail.com">Email me instead</a>
+          </div>
           <div class="gh-row">
             <a class="gh-chip" href="https://github.com/kifayat-irfan" target="_blank" rel="noopener">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="#f0b64a" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.17c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.72-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 1.27.41.35.82 1.04.82 2.1v3.11c0 .3.21.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
@@ -705,9 +784,9 @@
               <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></span>
               <span><small>GitHub</small><b>github.com/kifayat-irfan</b></span>
             </a>
-            <a class="contact-card" href="https://www.linkedin.com/in/kifayatirfan-aiengineer" target="_blank" rel="noopener">
+            <a class="contact-card" href="https://www.linkedin.com/in/kifayatirfan/" target="_blank" rel="noopener">
               <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4V8h4"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></span>
-              <span><small>LinkedIn</small><b>in/kifayatirfan-aiengineer</b></span>
+              <span><small>LinkedIn</small><b>in/kifayatirfan</b></span>
             </a>
           </div>
         </div>
